@@ -84,3 +84,8 @@ ENGAGE_ROBOTS = True
 # Uncomment this line if you are running a local development install without
 # HTTPS to disable HTTPS-only cookies.
 #SESSION_COOKIE_SECURE = False
+
+
+# Uncomment this if only default locale is needed
+#MIDDLEWARE_CLASSES = [middleware for middleware in list(base.MIDDLEWARE_CLASSES) if middleware != 'funfactory.middleware.LocaleURLMiddleware'] + ['tildeslash.base.middleware.DefaultLocaleMiddleware']
+#DEFAULT_LOCALE = 'zh-TW'
