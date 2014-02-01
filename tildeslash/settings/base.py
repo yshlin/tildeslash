@@ -16,7 +16,7 @@ INSTALLED_APPS = list(INSTALLED_APPS) + [
     # Application base, containing global templates.
     '%s.base' % PROJECT_MODULE,
     # Example code. Can (and should) be removed for actual projects.
-    '%s.examples' % PROJECT_MODULE,
+    '%s.blog' % PROJECT_MODULE,
     'django.contrib.admin',
     'django.contrib.messages',
 ]
@@ -99,3 +99,11 @@ LOGGING = {
         }
     }
 }
+
+MEDIA_ROOT = path('media')
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = path('static')
+STATIC_URL = '/static/'
+
+SUPPORTED_NONLOCALES = ['media', 'static', 'admin']

@@ -1,8 +1,9 @@
+from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls.defaults import patterns, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from .examples import urls
+from .blog import urls
 
 from funfactory.monkeypatches import patch
 from django.http import HttpResponse
@@ -35,4 +36,4 @@ urlpatterns = patterns('',
 
 ## In DEBUG mode, serve media files through Django.
 if settings.DEBUG:
-    urlpatterns += staticfiles_urlpatterns()
+    urlpatterns += staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
