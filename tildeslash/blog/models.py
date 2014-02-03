@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from markdown2 import Markdown
 from BeautifulSoup import BeautifulSoup
 
-markdowner = Markdown()
+markdowner = Markdown(extras=['fenced-code-blocks', ])
 
 
 class Post(models.Model):

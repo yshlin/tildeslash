@@ -1,1 +1,4 @@
 BeautifulSoup==3.2.1
+Pygments==1.6
+django-ace==1.0.0
+markdown2==2.2.0

@@ -3,6 +3,7 @@
 {% block content %}
 
     <h1>{{ post.title }}</h1>
+    <span>{{ post.publish_time.strftime("%a, %b %d, %Y") }}</span>
     <p>{{ post.html_content|safe }}</p>
 
 {% endblock %}
