@@ -2,17 +2,21 @@
 <html LANG="{{ LANG }}" dir="{{ DIR }}">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <title>{% block page_title %}playdoh examples{% endblock %}</title>
+    <title>{% block page_title %}tildeslash{% endblock %}</title>
 
     {% block site_css %}
       {% compress css %}
       <link type="text/less" href="{{ static('css/base.less') }}" rel="stylesheet">
-      <link type="text/css" href="{{ static('css/pygments/github.css') }}" rel="stylesheet">
+      <link type="text/css" href="{{ static('css/pygments/tomorrow-night.css') }}" rel="stylesheet">
       {% endcompress %}
     {% endblock %}
   </head>
   <body>
+    <header id="header">
+        <a id="logo" href="{{ url('blog.home') }}"></a>
+    </header>
     {% block content %}{% endblock %}
+    <footer id="footer"></footer>
     {% block site_js %}
       {% compress js %}
       <script src="{{ static('js/libs/jquery-1.10.2.min.js') }}"></script>
