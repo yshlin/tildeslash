@@ -18,3 +18,9 @@ def post(request, slug):
     post = Post.objects.get(slug=slug)
     data = {'post': post}
     return render(request, 'blog/post.html', data)
+
+
+def tagged_posts(request, slug):
+    posts = Post.objects.filter(tags__name__in=[slug, ])
+    data = {'tag': slug, 'posts': posts}
+    return render(request, 'blog/tagged-posts.html', data)

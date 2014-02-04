@@ -20,6 +20,8 @@ INSTALLED_APPS = list(INSTALLED_APPS) + [
     'django.contrib.admin',
     'django.contrib.messages',
     'django_ace',
+    'taggit',
+    'south',
 ]
 
 # Note! If you intend to add `south` to INSTALLED_APPS,

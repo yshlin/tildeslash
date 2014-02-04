@@ -3,6 +3,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from markdown2 import Markdown
 from BeautifulSoup import BeautifulSoup
+from pretty_times import pretty
+from taggit.managers import TaggableManager
 
 markdowner = Markdown(extras=['fenced-code-blocks', ])
 
@@ -14,6 +16,7 @@ class Post(models.Model):
     content = models.TextField(blank=True, default='')
     publish_time = models.DateTimeField(default=datetime.now)
     status = models.CharField(max_length=20, null=False, default='draft', choices=(('draft', 'Draft'), ('published', 'Published')))
+    tags = TaggableManager()
 
     @property
     def text_content(self):
@@ -22,3 +25,7 @@ class Post(models.Model):
     @property
     def html_content(self):
         return markdowner.convert(self.content)
+
+    @property
+    def publish_date_relative(self):
+        return pretty.date(self.publish_time)
