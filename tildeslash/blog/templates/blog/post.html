@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block page_title %}{{ post.title }} - tildeslash{% endblock %}
+{% block page_title %}~/{{ post.title }}{% endblock %}
 
 {% block content %}
     <div id="main-content">
@@ -9,6 +9,12 @@
 
         <p>{{ post.html_content|safe }}</p>
     </div>
+{% endblock %}
+{% block site_css %}
+  {% compress css %}
+  {{ super() }}
+  <link type="text/less" href="{{ static('css/post.less') }}" rel="stylesheet">
+  {% endcompress %}
 {% endblock %}
 {% block site_js %}
     {{ super() }}

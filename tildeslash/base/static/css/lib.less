@@ -1,0 +1,17 @@
+@backgroundColor: #000;
+@textColor: #c5c8c6;
+@backgroundHighlightColor: #1d1f21;
+@textHighlightColor: #fff;
+@borderColor: #373b41;
+@fontFamily: "Courier New", Courier, Monaco, monospace, sans-serif, "Microsoft JhengHei","Apple LiGothic Medium";
+@footerHeight: 60px;
+
+.tildeslash(@size) {
+  margin-left: -@size;
+  &:before {
+    display: inline-block;
+    content: "~/";
+    font-family: "Courier New", Courier, Monaco, monospace, sans-serif;
+    width: @size;
+  }
+}

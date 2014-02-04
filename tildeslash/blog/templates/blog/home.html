@@ -1,17 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div id="main-content">
-        {% for post in posts %}
-            <div class="post">
-                <a href="{{ url('blog.post', post.slug) }}"><h2>{{ post.title }}</h2></a>
-                <span>{{ post.publish_time.strftime("%a, %b %d, %Y") }}</span>
+  <div id="main-content">
+    <a href="{{ url('blog.home') }}"><h1>tildeslash></h1></a>
+    {% for post in posts %}
+      <div class="post">
+        <a href="{{ url('blog.post', post.slug) }}"><h2>{{ post.title }}</h2></a>
+        <span>{{ post.publish_time.strftime("%a, %b %d, %Y") }}</span>
 
-                <p>{{ post.text_content }}</p>
-            </div>
-        {% endfor %}
-    </div>
+        <p>{{ post.text_content }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+{% block site_css %}
+  {% compress css %}
+    {{ super() }}
+    <link type="text/less" href="{{ static('css/home.less') }}" rel="stylesheet">
+  {% endcompress %}
 {% endblock %}
 {% block site_js %}
-    {{ super() }}
+  {{ super() }}
 {% endblock %}
