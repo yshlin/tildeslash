@@ -25,6 +25,20 @@ a:hover {
   }
 }
 
+blockquote {
+  margin: 0;
+  padding: 10px 20px;
+  background-color: @backgroundHighlightColor;
+  border-left: 10px solid @borderColor;
+  p {
+    margin: 0;
+  }
+}
+
+pre {
+  margin: 10px;
+}
+
 #header {
   position: fixed;
   top: 0;
@@ -71,6 +85,13 @@ a:hover {
 h1 {
   margin-top: 0;
   padding-top: 20px;
+}
+
+.tags > a {
+  display: inline-block;
+  background: @backgroundHighlightColor;
+  border: 1px solid @borderColor;
+  padding: 0 3px;
 }
 
 #main-content {
