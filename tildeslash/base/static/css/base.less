@@ -70,15 +70,26 @@ pre {
     span {
       text-decoration: none;
     }
+    letter-spacing: 0;
+    .tilde {
+      margin-top: 0;
+    }
+    .slash {
+      padding-right: 0;
+    }
   }
+  .transition(letter-spacing);
   .tilde {
     display: inline-block;
     vertical-align: top;
     margin-top: -6px;
+    .transition(margin-top);
   }
   .slash {
     display: inline-block;
     vertical-align: top;
+    padding-right: 6px;
+    .transition(padding-right);
   }
 }
 
