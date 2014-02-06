@@ -20,6 +20,9 @@ a, a:link {
 a:hover {
   color: @textHighlightColor;
   text-decoration: underline;
+  span {
+    text-decoration: underline;
+  }
 }
 
 #header {
@@ -47,8 +50,21 @@ a:hover {
   color: #fff;
   vertical-align: middle;
   text-align: center;
+  letter-spacing: -8px;
   &:hover {
     text-decoration: none;
+    span {
+      text-decoration: none;
+    }
+  }
+  .tilde {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -6px;
+  }
+  .slash {
+    display: inline-block;
+    vertical-align: top;
   }
 }
 

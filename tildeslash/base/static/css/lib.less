@@ -7,6 +7,7 @@
 @footerHeight: 60px;
 
 .tildeslash(@size) {
+/*
   margin-left: -@size;
   &:before {
     display: inline-block;
@@ -14,4 +15,22 @@
     font-family: "Courier New", Courier, Monaco, monospace, sans-serif;
     width: @size;
   }
+*/
+}
+
+.rotate(@degree) {
+
+  transform: rotate(@degree);
+  /* Safari */
+  -webkit-transform: rotate(@degree);
+
+  /* Firefox */
+  -moz-transform: rotate(@degree);
+
+  /* IE */
+  -ms-transform: rotate(@degree);
+
+  /* Opera */
+  -o-transform: rotate(@degree);
+
 }

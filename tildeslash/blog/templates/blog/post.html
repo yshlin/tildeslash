@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 
-{% block page_title %}~/{{ post.title }}{% endblock %}
+{% block page_title %}{{ post.title }}{% endblock %}
 
 {% block content %}
     <div id="main-content">
-        <span>Posted {{ post.publish_date_relative }}</span>
         <h1>{{ post.title }}</h1>
+        <span>Posted {{ post.publish_date_relative }}</span> |
+        <span>
+          {% for tag in post.tags.names() %}
+            <a href="{{ url('tagged.posts', tag) }}">{{ tag }}</a>{{ '' if loop.index == 1 else ',' }}
+          {% endfor %}
+        </span>
 
         <p>{{ post.html_content|safe }}</p>
     </div>
