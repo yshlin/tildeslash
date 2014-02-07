@@ -2,7 +2,7 @@
 
 {% block content %}
   <div id="main-content">
-    <a href="{{ url('blog.home') }}"><h1><span class="tiltl">t</span><span class="up">i</span><span class="tiltr">l</span><span class="down">d</span><span class="tiltl">e</span><i>slash</i></h1></a>
+    <a href="{{ url('blog.home') }}"><h1><span class="tiltl">t</span><span class="up">i</span><span class="tiltr">l</span><span class="down">d</span><span class="tiltl">e</span><span class="slash">slash</span></h1></a>
     {% for post in posts %}
       <div class="post">
         <a href="{{ url('blog.post', post.slug) }}"><h2>{{ post.title }}</h2></a>
