@@ -121,7 +121,7 @@ h6 {
   font-size: 16px;
 }
 
-.tags > a {
+.tags > a, .tag {
   display: inline-block;
   background: @backgroundHighlightColor;
   border: 1px solid @borderColor;
@@ -130,6 +130,12 @@ h6 {
   &:hover {
     background: @borderColor;
     text-decoration: none;
+  }
+}
+h1 .tag {
+  padding: 5px 10px;
+  &:hover {
+    background: @backgroundHighlightColor;
   }
 }
 
