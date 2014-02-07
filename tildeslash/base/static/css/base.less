@@ -13,15 +13,22 @@ html, body {
 }
 
 a, a:link {
-  color: @textColor;
+  color: @linkColor;
   text-decoration: none;
 }
 
 a:hover {
-  color: @textHighlightColor;
+  color: @linkColor;
   text-decoration: underline;
-  span {
-    text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: @textColor;
+  a {
+    color: @textColor;
+  }
+  a:hover {
+    color: @textHighlightColor;
+    text-decoration: none;
   }
 }
 
@@ -119,6 +126,11 @@ h6 {
   background: @backgroundHighlightColor;
   border: 1px solid @borderColor;
   padding: 0 3px;
+  .rounded;
+  &:hover {
+    background: @borderColor;
+    text-decoration: none;
+  }
 }
 
 #main-content {

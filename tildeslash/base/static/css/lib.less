@@ -5,6 +5,7 @@
 @borderColor: #373b41;
 @fontFamily: "Courier New", Courier, Monaco, monospace, sans-serif, "Microsoft JhengHei","Apple LiGothic Medium";
 @footerHeight: 60px;
+@linkColor: #81a2be;
 
 .rotate(@degree) {
 
@@ -28,4 +29,10 @@
   -webkit-transition: @property @duration @ease;
   -moz-transition: @property @duration @ease;
   -o-transition: @property @duration @ease;
+}
+
+.rounded(@radius: 3px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
 }
