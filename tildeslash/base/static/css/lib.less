@@ -31,6 +31,14 @@
   -o-transition: @property @duration @ease;
 }
 
+.animate(@settings) {
+	animation: @settings;
+	-webkit-animation: @settings;
+	-moz-animation: @settings;
+	-ms-animation: @settings;
+	-o-animation: @settings;
+}
+
 .rounded(@radius: 3px) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;

@@ -1,5 +1,64 @@
 @import "lib";
 
+.cursorBlinkKeyframes {
+  0% {
+    color: @textColor;
+  }
+  50% {
+    color: @backgroundColor;
+  }
+  100% {
+    color: @textColor;
+  }
+}
+
+.insertCursorBlinkKeyframes {
+  0% {
+    color: @textColor;
+    background: @backgroundColor;
+  }
+  50% {
+    color: @backgroundColor;
+    background: @textColor;
+  }
+  100% {
+    color: @textColor;
+    background: @backgroundColor;
+  }
+}
+
+@keyframes cursorBlink {
+  .cursorBlinkKeyframes;
+}
+@-moz-keyframes cursorBlink {
+  .cursorBlinkKeyframes;
+}
+@-webkit-keyframes cursorBlink {
+  .cursorBlinkKeyframes;
+}
+@-ms-keyframes cursorBlink {
+  .cursorBlinkKeyframes;
+}
+@-o-keyframes cursorBlink {
+  .cursorBlinkKeyframes;
+}
+
+@keyframes insertCursorBlink {
+  .insertCursorBlinkKeyframes;
+}
+@-moz-keyframes insertCursorBlink {
+  .insertCursorBlinkKeyframes;
+}
+@-webkit-keyframes insertCursorBlink {
+  .insertCursorBlinkKeyframes;
+}
+@-ms-keyframes insertCursorBlink {
+  .insertCursorBlinkKeyframes;
+}
+@-o-keyframes insertCursorBlink {
+  .insertCursorBlinkKeyframes;
+}
+
 h1 {
   height: 80px;
   .up {
@@ -33,6 +92,14 @@ h1 {
     font-style: italic;
     .transition();
   }
+  .cursor {
+    text-decoration: none;
+    .animate(cursorBlink 1.0s infinite);
+    &:before {
+      text-decoration: none;
+      content: "_";
+    }
+  }
 }
 h1 a:hover {
   .up {
@@ -52,4 +119,10 @@ h1 a:hover {
     .rotate(0deg);
   }
 }
-
+h1:hover .cursor {
+  text-decoration: none;
+  &:before {
+    text-decoration: none;
+    .animate(insertCursorBlink 1.0s infinite);
+  }
+}
