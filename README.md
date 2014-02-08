@@ -4,7 +4,7 @@ tildeslash
 tildeslash is a web-based codelog software, i.e. blogware for developers.  
 Make use of the powerful [Ace][ace] as [Markdown][markdown] editor.  
 
-tildeslash is named from the pathname of home folder, a.k.a `~/` on Unix/Linux.
+tildeslash is named from the pathname of home folder, a.k.a `~/` on Unix/Linux.  
 The goal of tildeslash is to give developers a comforting home on the web,  
 where they can easily share and teach coding skills for the public.  
 
@@ -27,6 +27,7 @@ Installation
 ------------
 
 **Prerequisites:**
+* [git](http://git-scm.com/) of course.
 * [python 2.x](http://www.python.org/)
 * [virtualenv](http://www.virtualenv.org/en/latest/) (with [virtualenv wrapper](http://virtualenvwrapper.readthedocs.org/en/latest/) recommendded)
 * [lessc](http://lesscss.org/)
@@ -77,7 +78,7 @@ Load database schema and initial data with following commands:
 ```
 
 If your less won't compile automatically,  
-add the path to the LESS compiler (found by using which lessc)  
+add the path to the LESS compiler (found by using `which lessc`)  
 to tildeslash/settings/local.py with the following line:  
 ```python
 LESS_BIN = '/path/to/lessc'
@@ -91,27 +92,28 @@ and then run the server:
 $ ./manage.py runserver
 ```
 
-Let's it! Now check this URL in your browser: http://localhost:8000/  
+Let's it! Now check this URL in your browser:  
+http://localhost:8000/  
 
 Features
 --------
-Powerful [Ace][ace] Markdown editor, let your hands free from mouse/touchpad when codelogging.  
-Github flavored [fenced-code-blocks](https://help.github.com/articles/github-flavored-markdown#fenced-code-blocks).  
-Simple tag support through [django-taggit](https://github.com/alex/django-taggit).  
-Pretty date format through [django-pretty-times](https://github.com/imtapps/django-pretty-times).  
-Clean interface with [Tomorrow-night theme](https://github.com/MozMorris/tomorrow-pygments) as default.  
+* Powerful [Ace][ace] Markdown editor, free your hands from mouse when codelogging.  
+* Github flavored [fenced-code-blocks](https://help.github.com/articles/github-flavored-markdown#fenced-code-blocks).  
+* Simple tag support through [django-taggit](https://github.com/alex/django-taggit).  
+* Pretty date format through [django-pretty-times](https://github.com/imtapps/django-pretty-times).  
+* Clean interface with [Tomorrow-night theme](https://github.com/MozMorris/tomorrow-pygments) as default.  
 
-Roadmap
+Todos
 -------
-Wordcount with asian character support.  
-Responsive Design.  
-RSS feed.  
-L10n (Start from chinese).  
-Author profile.  
-Tag cloud.  
-Customized admin interface. (Currently using default django admin)  
-Mobile-accessible admin interface.  
-Inline image upload.  
+* Wordcount with asian character support.  
+* Responsive Design.  
+* RSS feed.  
+* L10n (Start from chinese).  
+* Author profile.  
+* Tag cloud.  
+* Customized admin interface. (Currently using default django admin)  
+* Mobile-accessible admin interface.  
+* Inline image upload.  
 
 Author
 ------
