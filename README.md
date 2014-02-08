@@ -79,7 +79,7 @@ Load database schema and initial data with following commands:
 
 If your less won't compile automatically,  
 add the path to the LESS compiler (found by using `which lessc`)  
-to tildeslash/settings/local.py with the following line:  
+to `tildeslash/settings/local.py` with the following line:  
 ```python
 LESS_BIN = '/path/to/lessc'
 ```
@@ -93,32 +93,32 @@ $ ./manage.py runserver
 ```
 
 Let's it! Now check this URL in your browser:  
-http://localhost:8000/  
+[http://localhost:8000/](http://localhost:8000/)  
 
 Features
 --------
-* Powerful [Ace][ace] Markdown editor, free your hands from mouse when codelogging.  
-* Github flavored [fenced-code-blocks](https://help.github.com/articles/github-flavored-markdown#fenced-code-blocks).  
-* Simple tag support through [django-taggit](https://github.com/alex/django-taggit).  
-* Pretty date format through [django-pretty-times](https://github.com/imtapps/django-pretty-times).  
-* Clean interface with [Tomorrow-night theme](https://github.com/MozMorris/tomorrow-pygments) as default.  
+* Powerful [Ace][ace] Markdown editor, free your hands from mouse when codelogging  
+* Github flavored [fenced-code-blocks](https://help.github.com/articles/github-flavored-markdown#fenced-code-blocks)  
+* Simple tag support through [django-taggit](https://github.com/alex/django-taggit)  
+* Pretty date format through [django-pretty-times](https://github.com/imtapps/django-pretty-times)  
+* Clean interface with [Tomorrow-night theme](https://github.com/MozMorris/tomorrow-pygments) as default  
 
 Todos
 -------
-* Wordcount with asian character support.  
-* Responsive Design.  
-* RSS feed.  
-* L10n (Start from chinese).  
-* Author profile.  
-* Tag cloud.  
-* Customized admin interface. (Currently using default django admin)  
-* Mobile-accessible admin interface.  
-* Inline image upload.  
+* Wordcount with asian character support  
+* Responsive Design  
+* RSS feed  
+* L10n (Start from chinese)  
+* Author profile  
+* Tag cloud  
+* Customized admin interface (Currently using default django admin)  
+* Mobile-accessible admin interface  
+* Inline image upload  
 
 Author
 ------
-I'm Eddie, a Web Developer located in Taipei, Taiwan.  
-Currently working at Mozilla.  
+I'm Eddie, a Web Developer located in Taipei, Taiwan  
+Currently working at Mozilla  
 
 License
 -------
