@@ -89,3 +89,6 @@ ENGAGE_ROBOTS = True
 # Uncomment this if only default locale is needed
 #MIDDLEWARE_CLASSES = [middleware for middleware in list(base.MIDDLEWARE_CLASSES) if middleware != 'funfactory.middleware.LocaleURLMiddleware'] + ['tildeslash.base.middleware.DefaultLocaleMiddleware']
 #DEFAULT_LOCALE = 'zh-TW'
+
+#Give your codelog a cool title
+CODELOG_TITLE = ''
