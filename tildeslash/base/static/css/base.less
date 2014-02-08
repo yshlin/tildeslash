@@ -121,7 +121,7 @@ h6 {
   font-size: 16px;
 }
 
-.tags > a, .tag {
+.linkBlock {
   display: inline-block;
   background: @backgroundHighlightColor;
   border: 1px solid @borderColor;
@@ -131,6 +131,10 @@ h6 {
     background: @borderColor;
     text-decoration: none;
   }
+}
+
+.tags > a, .tag {
+  .linkBlock;
 }
 h1 .tag {
   padding: 5px 10px;
@@ -175,4 +179,22 @@ h1 .tag {
   -webkit-transform: scaleX(-1);
   filter: FlipH;
   -ms-filter: "FlipH";
+}
+
+#paging-nav {
+  a {
+    .linkBlock;
+    padding: 5px 10px;
+    font-weight: bold;
+  }
+  .arrow {
+    color: @textColor;
+  }
+  .number {
+    color: #de935f;
+    &.current {
+      background: @borderColor;
+    }
+  }
+
 }

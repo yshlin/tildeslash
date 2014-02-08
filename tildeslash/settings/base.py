@@ -111,3 +111,5 @@ STATIC_ROOT = path('static')
 STATIC_URL = '/static/'
 
 SUPPORTED_NONLOCALES = ['media', 'static', 'admin']
+
+POSTS_PER_PAGE = 10

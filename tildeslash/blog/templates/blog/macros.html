@@ -1,0 +1,35 @@
+{% macro post_summary(post) %}
+  <div class="post">
+    <h2><a href="{{ url('blog.post', post.slug) }}">{{ post.title }}</a></h2>
+    <span class="time">Posted {{ post.publish_date_relative }}</span> |
+    <span class="tags">
+      {% for tag in post.tags.names() %}
+        <a href="{{ url('tagged.posts', tag) }}">{{ tag }}</a>{{ '' if loop.index == loop.length else ',' }}
+      {% endfor %}
+    </span>
+
+    <p>{{ post.text_content }}</p>
+  </div>
+{% endmacro %}
+
+{% macro paging_navigator(pager, page_path) %}
+  <div id="paging-nav">
+    {% if pager.paginator.num_pages > 1 %}
+      {% if pager.number > 1 %}
+        <a class="arrow" href="{{ page_path }}1"><<</a>
+      {% endif %}
+      {% if pager.has_previous() %}
+        <a class="arrow" href="{{ page_path }}{{ pager.previous_page_number() }}"><</a>
+      {% endif %}
+      {% for page in pager.paginator.page_range %}
+        <a class="number {{ 'current' if pager.number == page }}" {% if pager.number != page %}href="{{ page_path }}{{ page }}"{% endif %}>{{ page }}</a>
+      {% endfor %}
+      {% if pager.has_next() %}
+        <a class="arrow" href="{{ page_path }}{{ pager.next_page_number() }}">></a>
+      {% endif %}
+      {% if pager.number < pager.paginator.num_pages %}
+        <a class="arrow" href="{{ page_path }}{{ pager.paginator.num_pages }}">>></a>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endmacro %}

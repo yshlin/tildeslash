@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% from "blog/macros.html" import post_summary, paging_navigator with context %}
+
 {% block content %}
   <div id="main-content">
     <h1>
@@ -9,19 +11,12 @@
       {% else %}<span class="tiltl">t</span><span class="up">i</span><span class="tiltr">l</span><span class="down">d</span><span class="tiltl">e</span><span class="slash">slash</span>
       codelog{% endif %}<span class="cursor"> </span></a>
     </h1>
-    {% for post in posts %}
-      <div class="post">
-        <h2><a href="{{ url('blog.post', post.slug) }}">{{ post.title }}</a></h2>
-        <span class="time">Posted {{ post.publish_date_relative }}</span> |
-        <span class="tags">
-          {% for tag in post.tags.names() %}
-            <a href="{{ url('tagged.posts', tag) }}">{{ tag }}</a>{{ '' if loop.index == loop.length else ',' }}
-          {% endfor %}
-        </span>
 
-        <p>{{ post.text_content }}</p>
-      </div>
+    {% for post in posts %}
+      {{ post_summary(post) }}
     {% endfor %}
+
+    {{ paging_navigator(pager, url('paged.posts')) }}
   </div>
 {% endblock %}
 {% block site_css %}
