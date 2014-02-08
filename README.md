@@ -3,8 +3,9 @@ tildeslash
 
 tildeslash is a web-based codelog software, i.e. blogware for developers.  
 Make use of the powerful [Ace][ace] as [Markdown][markdown] editor.  
-The goal of tildeslash is give developers a comforting home on the web,  
-(and that's just what ```~/``` mean in linux)  
+
+tildeslash is named from the pathname of home folder, a.k.a `~/` on Unix/Linux.
+The goal of tildeslash is to give developers a comforting home on the web,  
 where they can easily share and teach coding skills for the public.  
 
 tildeslash is based on [Mozilla][mozilla]'s [Playdoh][playdoh-docs],  
@@ -29,6 +30,7 @@ Installation
 * [python 2.x](http://www.python.org/)
 * [virtualenv](http://www.virtualenv.org/en/latest/) (with [virtualenv wrapper](http://virtualenvwrapper.readthedocs.org/en/latest/) recommendded)
 * [lessc](http://lesscss.org/)
+* [MySQL Database](http://www.mysql.com/) or other alternatives
 
 **Steps:**
 
@@ -56,7 +58,12 @@ $ export ARCHFLAGS="-arch i386 -arch x86_64"
 $ pip install -r requirements/compiled.txt
 ```
 
-Create your database, and copy sample local setting file:  
+Create your database, for non-ascii codeloggers, be aware of encoding settings.
+```sql
+CREATE DATABASE tildeslash CHARACTER SET utf8 COLLATE utf8_general_ci;
+```
+
+Copy sample local setting file:  
 ```sh
 $ cp tildeslash/settings/local.py-dist tildeslash/settings/local.py
 ```
@@ -78,7 +85,8 @@ LESS_BIN = '/path/to/lessc'
 
 **Make it run:**
 
-To make the server run, make sure you are inside a virtualenv, and then run the server:  
+To make the server run, make sure you are inside a virtualenv,  
+and then run the server:  
 ```sh
 $ ./manage.py runserver
 ```
