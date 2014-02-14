@@ -8,7 +8,7 @@
       {% endfor %}
     </span>
 
-    <p>{{ post.text_content }}</p>
+    <p>{{ post.text_excerpt|safe }}...</p>
   </div>
 {% endmacro %}
 
