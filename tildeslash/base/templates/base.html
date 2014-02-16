@@ -2,7 +2,7 @@
 <html LANG="{{ LANG }}" dir="{{ DIR }}" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <title>{% block page_title %}{% if CODELOG_TITLE %}{{ CODELOG_TITLE }}{% else %}tildeslash codelog{% endif %}{% endblock %}</title>
+    <title>{% block page_title %}{{ CODELOG_TITLE }}{% endblock %}{% block page_title_suffix %} - {{ CODELOG_TITLE }}{% endblock %}</title>
 
     <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
     {% block site_css %}
@@ -19,7 +19,7 @@
     {% block content %}{% endblock %}
     <footer id="footer">
       <small class="wrongs">
-      <span>All content copyleft <span class="copyleft">©</span> 2014 by <strong><a href="{{ url('blog.home') }}">{{ self.page_title()|striptags }}</a></strong>.</span> <span>All wrongs reserved.</span>
+      <span>All content copyleft <span class="copyleft">©</span> 2014 by <strong><a href="{{ url('blog.home') }}">{{ CODELOG_TITLE }}</a></strong>.</span> <span>All wrongs reserved.</span>
       </small>
       <small class="hosted">Proudly hosted with <strong><a href="https://github.com/yshlin/tildeslash">tildeslash</a></strong>.</small>
     </footer>
